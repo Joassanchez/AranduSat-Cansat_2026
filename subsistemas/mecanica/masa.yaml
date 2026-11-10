@@ -1,0 +1,43 @@
+# Presupuesto de masa — Mecánica y estructura
+# Lo suma presupuestos/calc/masa_total.py junto con los demás subsistemas.
+# fuente: calculado | hoja_de_datos | modelo_3d | medido | estimado
+# masa_g: null mientras no esté definido (cuenta como pendiente)
+# referencia: link al datasheet o ruta del repo donde sale el número
+
+subsistema: mecanica
+componentes:
+  - nombre: Tubo exterior ASA 90/86 x 230 mm
+    masa_g: 138.5
+    incertidumbre_g: 6
+    fuente: calculado
+    referencia: subsistemas/mecanica/seccion-2-mecanica.md (2.2 y 2.6), rango 133-144 g segun densidad
+  - nombre: Tapa superior
+    masa_g: 23
+    incertidumbre_g: 1.5
+    fuente: modelo_3d
+    referencia: subsistemas/mecanica/seccion-2-mecanica.md (2.6), maciza en ASA
+  - nombre: Tapa inferior
+    masa_g: 23
+    incertidumbre_g: 1.5
+    fuente: modelo_3d
+    referencia: subsistemas/mecanica/seccion-2-mecanica.md (2.6), maciza en ASA
+  - nombre: Bandeja perforada
+    masa_g: 36
+    incertidumbre_g: 1
+    fuente: modelo_3d
+    referencia: subsistemas/mecanica/seccion-2-mecanica.md (2.6), maciza en ASA
+  - nombre: Tornillos, tuercas e insertos M3
+    masa_g: null
+    incertidumbre_g: null
+    fuente: hoja_de_datos
+    referencia: ""
+  - nombre: Mecanismo de liberacion (servo + pasador)
+    masa_g: null
+    incertidumbre_g: null
+    fuente: hoja_de_datos
+    referencia: "lo define mecanica con descenso"
+  - nombre: Lastre de ajuste
+    masa_g: null
+    incertidumbre_g: null
+    fuente: calculado
+    referencia: "lo que falte para 500 g (acero, nunca plomo: S9)"

@@ -1,0 +1,11 @@
+# Fin de línea uniforme entre Windows, Linux y Mac
+* text=auto eol=lf
+
+# Binarios: nunca intentar fusionarlos
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.xlsx  binary
+*.docx  binary
+*.pptx  binary
+*.stl   binary

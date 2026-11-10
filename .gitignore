@@ -1,0 +1,35 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Office: archivos temporales y de bloqueo
+~$*
+*.tmp
+
+# CAD nativo pesado: va en Drive (ver cad/README.md de cada subsistema)
+*.f3d
+*.f3z
+*.sldprt
+*.sldasm
+*.SLDPRT
+*.SLDASM
+*.ipt
+*.iam
+*.FCStd1
+*.FCBak
+
+# Exportaciones del PDR generadas localmente
+pdr/salida/

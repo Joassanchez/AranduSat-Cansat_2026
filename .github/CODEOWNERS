@@ -1,0 +1,30 @@
+# Dueños de carpetas: GitHub pide su revisión en cada PR que toque su carpeta.
+# Reemplazá cada @usuario-... por el usuario real de GitHub (con la @).
+# Gana la ÚLTIMA regla que coincide: lo general arriba, lo específico abajo.
+# Para reasignar: editá este archivo y abrí un PR. Rige apenas se mergea a main.
+
+# Por defecto, todo lo que no tenga dueño específico lo revisa el integrador
+*                                 @usuario-integrador
+
+# Subsistemas
+/subsistemas/sistema/             @usuario-integrador
+/subsistemas/mecanica/            @usuario-joaquin
+/subsistemas/sensores/            @usuario-sensores
+/subsistemas/descenso/            @usuario-descenso
+/subsistemas/cdh/                 @usuario-cdh
+/subsistemas/eps/                 @usuario-eps
+/subsistemas/fsw/                 @usuario-fsw
+/subsistemas/gcs/                 @usuario-gcs
+
+# Presupuesto de masa: lo coordina mecánica
+/presupuestos/                    @usuario-joaquin
+
+# Documentos de integración
+/requisitos/                      @usuario-integrador
+/pdr/                             @usuario-integrador
+/referencia/                      @usuario-integrador
+
+# Reglas de los agentes y configuración: las cambia el equipo, las aprueba el integrador
+/AGENTS.md                        @usuario-integrador
+/.agent/                          @usuario-integrador
+/.github/                         @usuario-integrador

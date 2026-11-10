@@ -1,0 +1,14 @@
+# Presupuesto de masa — Comunicaciones y manejo de datos (C&DH)
+# Lo suma presupuestos/calc/masa_total.py junto con los demás subsistemas.
+# fuente: calculado | hoja_de_datos | modelo_3d | medido | estimado
+# masa_g: null mientras no esté definido (cuenta como pendiente)
+# referencia: link al datasheet o ruta del repo donde sale el número
+
+subsistema: cdh
+componentes: []
+# Ejemplo:
+#  - nombre: Sensor de presion BMP390
+#    masa_g: 1.2
+#    incertidumbre_g: 0.2
+#    fuente: hoja_de_datos
+#    referencia: https://link-al-datasheet

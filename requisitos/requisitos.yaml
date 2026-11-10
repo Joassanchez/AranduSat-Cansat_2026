@@ -1,0 +1,455 @@
+# Requisitos de misión (Anexo A v2, CanSat Universitario 2026/27)
+#
+# Dueño de este archivo: integrador. Los demás proponen cambios por PR.
+# estado: pendiente | en_progreso | cubierto | no_aplica | tbr
+# cubierto_en: rutas del repo donde se demuestra el cumplimiento
+#   (ej.: subsistemas/mecanica/trades/2026-11-cono.md)
+# responsable: carpeta de subsistemas/ que responde por el requisito
+#
+# Fuente: referencia/originales/anexo-a-v2.pdf (texto transcrito automáticamente;
+# ante cualquier duda manda el PDF).
+
+requisitos:
+- id: C1
+  categoria: Operativos
+  texto: El contenedor del CanSat estará montado dentro del fuselaje del cohete, en la parte superior
+    del cohete.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: C2
+  categoria: Operativos
+  texto: La carga útil y el contenedor del CanSat se desplegarán del cohete cuando se active la carga
+    de expulsión del motor del cohete.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: C3
+  categoria: Operativos
+  texto: Después del despliegue, el CanSat SE ACTIVARÁ y descenderá a 15 metros/segundo utilizando un
+    paracaídas que se despliega automáticamente. El error permitido es de +/- 3 m/s.
+  responsable: descenso
+  estado: pendiente
+  cubierto_en: []
+- id: C4
+  categoria: Operativos
+  texto: Al alcanzar el 80% de la altitud máxima de vuelo, el CanSat liberará otro sistema de descenso
+    que asegurará que descenderá a un promedio de 5 metros/segundo durante todo el descenso, con un margen
+    de +/- 3 metros/seg.
+  responsable: descenso
+  estado: pendiente
+  cubierto_en: []
+  nota: 'Ambigüedad: ''5 m/s promedio durante todo el descenso'' (¿desde el apogeo o desde el 80%?). La
+    planilla asume separación de carga útil y parapente; el Anexo no lo exige.'
+- id: C5
+  categoria: Operativos
+  texto: La telemetría de los sensores se transmitirá a una frecuencia de 1 Hz.
+  responsable: cdh
+  estado: pendiente
+  cubierto_en: []
+- id: C6
+  categoria: Operativos
+  texto: La carga útil grabará en video toda la secuencia de descenso, apuntando a cenit, para evidenciar
+    la corriente activación de los sistemas de descenso.
+  responsable: sensores
+  estado: pendiente
+  cubierto_en: []
+- id: C7
+  categoria: Operativos
+  texto: La carga útil grabará en video toda la secuencia de descenso, apuntando a nadir, para evidenciar
+    la corriente activación de los sistemas de descenso.
+  responsable: sensores
+  estado: pendiente
+  cubierto_en: []
+- id: C8
+  categoria: Operativos
+  texto: La carga útil del CanSat incluirá una baliza audible que se encienda por separado y sea independiente
+    de la batería y la electrónica del CanSat.
+  responsable: eps
+  estado: pendiente
+  cubierto_en: []
+- id: C9
+  categoria: Operativos
+  texto: El costo del CanSat debe ser inferior a $1.000.000. Las herramientas de análisis y soporte en
+    tierra no están incluidas en el costo del CanSat.
+  responsable: sistema
+  estado: pendiente
+  cubierto_en: []
+  nota: Moneda no indicada; se asume pesos argentinos.
+- id: S1
+  categoria: Estructurales
+  texto: La masa combinada del CanSat y el contenedor debe ser de 500 gramos +/- 10 gramos.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: S2
+  categoria: Estructurales
+  texto: El diámetro del CanSat debe ser de 90 mm.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+  nota: 'Conflicto: las Bases §4 dicen cilindro de 95 mm. Lectura de trabajo: 95 mm = espacio del cohete,
+    90 mm = diámetro máximo del CanSat (TBR con la organización).'
+- id: S3
+  categoria: Estructurales
+  texto: La longitud total, incluidos los sistemas de descenso, debe encontrarse en el rango de 200 mm
+    a 250 mm.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+  nota: 'Conflicto: las Bases §4 dicen 200 mm de longitud. Confirmar si el largo es fijo o el rango 200–250
+    mm.'
+- id: S4
+  categoria: Estructurales
+  texto: La estructura del CanSat debe soportar vibraciones de 15 Gs.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: S5
+  categoria: Estructurales
+  texto: El CanSat debe soportar un impacto de choque de 30 Gs.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: S6
+  categoria: Estructurales
+  texto: El grosor de la pared del exterior debe ser de al menos 2 mm cuando se imprima en 3D y no debe
+    flexionarse ni deformarse bajo tensión.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: S7
+  categoria: Estructurales
+  texto: El cilindro del CanSat puede utilizarse para sujetar cualquier pieza desplegable de la carga
+    útil, pero debe permitir que se deslice libremente fuera de la sección del cohete.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: S8
+  categoria: Estructurales
+  texto: Todos los componentes electrónicos y mecánicos deben estar montados de forma fija utilizando
+    soportes adecuados, tales como separadores, tornillos o adhesivos de alto rendimiento.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: S9
+  categoria: Estructurales
+  texto: Los materiales del contenedor del CanSat no deberán ser contaminantes ni perjudiciales para el
+    ambiente.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: M1
+  categoria: Mecanismos
+  texto: No se permiten actuadores pirotécnicos ni químicos.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: M2
+  categoria: Mecanismos
+  texto: Los mecanismos que utilicen calor (p. ej., hilo de nicrom) no deben estar expuestos al entorno
+    exterior para reducir el riesgo potencial de incendiar la vegetación.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: M3
+  categoria: Mecanismos
+  texto: Todos los mecanismos deben ser capaces de mantener su configuración o estados bajo todas las
+    fuerzas aplicadas.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: M4
+  categoria: Mecanismos
+  texto: No se deben utilizar contactos de resorte para realizar conexiones eléctricas a las baterías.
+    Las fuerzas de choque pueden provocar desconexiones momentáneas.
+  responsable: mecanica
+  estado: pendiente
+  cubierto_en: []
+- id: E1
+  categoria: Eléctricos
+  texto: No se permiten baterías de polímero de litio.
+  responsable: eps
+  estado: pendiente
+  cubierto_en: []
+- id: E2
+  categoria: Eléctricos
+  texto: La fuente de batería puede ser alcalina, Ni-Cad, Ni-MH o Litio. Las celdas de litio deben estar
+    fabricadas con un empaque metálico similar a las celdas 18650. Se permiten baterías de botón.
+  responsable: eps
+  estado: pendiente
+  cubierto_en: []
+- id: E3
+  categoria: Eléctricos
+  texto: Se deberá colocar uno o más paneles solares que reciban la radiación solar a fines de emitir
+    una señal cuando reciban radiación.
+  responsable: eps
+  estado: pendiente
+  cubierto_en: []
+- id: E4
+  categoria: Eléctricos
+  texto: Se requiere un interruptor de encendido fácilmente accesible a través del contenedor, para colocar
+    la carga útil en estado STAND-BY.
+  responsable: eps
+  estado: pendiente
+  cubierto_en: []
+- id: E5
+  categoria: Eléctricos
+  texto: El contenedor debe tener pequeños orificios de acceso para los interruptores de encendido, de
+    no más de 10 mm.
+  responsable: eps
+  estado: pendiente
+  cubierto_en: []
+- id: E6
+  categoria: Eléctricos
+  texto: Se requiere un indicador de encendido.
+  responsable: eps
+  estado: pendiente
+  cubierto_en: []
+- id: E7
+  categoria: Eléctricos
+  texto: El CanSat debe funcionar durante un mínimo de dos horas cuando esté integrado en el cohete.
+  responsable: eps
+  estado: pendiente
+  cubierto_en: []
+- id: E8
+  categoria: Eléctricos
+  texto: La baliza de audio debe funcionar con una batería independiente.
+  responsable: eps
+  estado: pendiente
+  cubierto_en: []
+- id: E9
+  categoria: Eléctricos
+  texto: La baliza de audio debe tener un interruptor de encendido fácilmente accesible a través del contenedor.
+  responsable: eps
+  estado: pendiente
+  cubierto_en: []
+- id: X1
+  categoria: Comunicaciones
+  texto: 'Se utilizarán radios que trabajen en las frecuencias autorizadas por ENACOM: 915 – 928 MHz y
+    2400 – 2483.5 MHz.'
+  responsable: cdh
+  estado: pendiente
+  cubierto_en: []
+- id: X2
+  categoria: Comunicaciones
+  texto: Las radios no deben utilizar el modo de difusión (broadcast).
+  responsable: cdh
+  estado: pendiente
+  cubierto_en: []
+- id: X3
+  categoria: Comunicaciones
+  texto: La telemetría deberá enviar un comando automáticamente cuando el CanSat se separe del cohete
+    (comienzo de misión).
+  responsable: cdh
+  estado: pendiente
+  cubierto_en: []
+- id: X4
+  categoria: Comunicaciones
+  texto: El CanSat transmitirá la telemetría una vez por segundo.
+  responsable: cdh
+  estado: pendiente
+  cubierto_en: []
+- id: X5
+  categoria: Comunicaciones
+  texto: La telemetría del CanSat debe incluir altitud, presión atmosférica, temperatura, aceleraciones
+    y rotaciones en los tres ejes y coordenadas GPS que incluyan latitud, longitud, altitud y número de
+    satélites rastreados.
+  responsable: cdh
+  estado: pendiente
+  cubierto_en: []
+- id: X6
+  categoria: Comunicaciones
+  texto: Mediante un telecomando, la telemetría debe transmitir el estado de la batería y la señal recibida
+    por los paneles solares.
+  responsable: cdh
+  estado: pendiente
+  cubierto_en: []
+- id: SN1
+  categoria: Sensores
+  texto: La carga útil del CanSat medirá su altitud utilizando la presión atmosférica.
+  responsable: sensores
+  estado: pendiente
+  cubierto_en: []
+- id: SN2
+  categoria: Sensores
+  texto: La carga útil del CanSat medirá su temperatura interna.
+  responsable: sensores
+  estado: pendiente
+  cubierto_en: []
+- id: SN3
+  categoria: Sensores
+  texto: La carga útil del CanSat medirá el voltaje de su batería.
+  responsable: sensores
+  estado: pendiente
+  cubierto_en: []
+- id: SN4
+  categoria: Sensores
+  texto: La carga útil del CanSat rastreará su posición mediante GPS.
+  responsable: sensores
+  estado: pendiente
+  cubierto_en: []
+- id: SN5
+  categoria: Sensores
+  texto: La carga útil del CanSat medirá sus tasas de aceleración y rotación.
+  responsable: sensores
+  estado: pendiente
+  cubierto_en: []
+- id: SN6
+  categoria: Sensores
+  texto: La carga útil del CanSat grabará en video el despliegue los sistemas de descenso.
+  responsable: sensores
+  estado: pendiente
+  cubierto_en: []
+- id: SN7
+  categoria: Sensores
+  texto: Las cámaras de video deben grabar en color y con una resolución mínima de 640x480.
+  responsable: sensores
+  estado: pendiente
+  cubierto_en: []
+- id: SN8
+  categoria: Sensores
+  texto: La carga útil del CanSat medirá la corriente de su batería.
+  responsable: sensores
+  estado: pendiente
+  cubierto_en: []
+- id: G1
+  categoria: Estación Terrena
+  texto: La estación terrena enviará un comando al CanSat para calibrar la altitud a cero cuando el CanSat
+    esté en la plataforma de lanzamiento antes del despegue.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G2
+  categoria: Estación Terrena
+  texto: La estación terrena generará archivos CSV con todos los datos de los sensores, que se grabarán
+    en la computadora de la estación terrena y en un disco de respaldo.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G3
+  categoria: Estación Terrena
+  texto: La telemetría debe incluir el tiempo de misión con una resolución de 1 segundo.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G4
+  categoria: Estación Terrena
+  texto: Cada equipo deberá desarrollar su propia estación terrena.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G5
+  categoria: Estación Terrena
+  texto: Toda la telemetría se mostrará en tiempo real en formato de texto durante el ascenso y el descenso
+    en la estación terrena.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G6
+  categoria: Estación Terrena
+  texto: Toda la telemetría se mostrará en el Sistema Internacional de Unidades (SI) y las unidades deberán
+    indicarse en las pantallas.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G7
+  categoria: Estación Terrena
+  texto: Los equipos graficarán la altitud, el voltaje de la batería, la corriente de la batería, los
+    valores del acelerómetro y las tasas de rotación en tiempo real.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G8
+  categoria: Estación Terrena
+  texto: Los equipos mostrarán el tiempo de misión, la temperatura, la posición GPS, el recuento de paquetes
+    recibidos, el recuento de paquetes perdidos y el estado del software de vuelo en tiempo real.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G9
+  categoria: Estación Terrena
+  texto: La estación terrena debe incluir una computadora portátil con un mínimo de dos horas de autonomía
+    de batería, una radio y una antena.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G10
+  categoria: Estación Terrena
+  texto: La estación terrena debe ser portátil para que el equipo pueda ubicarse en el sitio de operación
+    de la estación terrena a lo largo de la línea de vuelo. No habrá energía de CA disponible en el sitio
+    de operación.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G11
+  categoria: Estación Terrena
+  texto: La estación terrena utilizará una antena de mesa o portátil.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G12
+  categoria: Estación Terrena
+  texto: Debido a que la estación terrena debe visualizarse bajo luz solar intensa, las pantallas deben
+    diseñarse teniendo esto en cuenta, incluyendo el uso de fuentes más grandes (mínimo 14 puntos), trazos
+    de gráficos y ejes en negrita, y un tema de texto oscuro sobre fondo claro.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G13
+  categoria: Estación Terrena
+  texto: Todos los datos se mostrarán simultáneamente en la interfaz gráfica (GUI) de la estación terrena.
+    No se permiten pestañas.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G14
+  categoria: Estación Terrena
+  texto: El sistema terreno contará el número de paquetes recibidos. Tenga en cuenta que este número no
+    es equivalente al contador de paquetes transmitidos, sino al conteo de paquetes recibidos con éxito
+    en la estación terrena durante la duración del vuelo.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: G15
+  categoria: Estación Terrena
+  texto: La estación terrena debe ser capaz de enviar telecomandos.
+  responsable: gcs
+  estado: pendiente
+  cubierto_en: []
+- id: F1
+  categoria: Software Vuelo
+  texto: El software de vuelo mantendrá un recuento de los paquetes transmitidos que se incrementará con
+    cada transmisión de paquetes a lo largo de la misión. El valor se mantendrá a través de reinicios
+    del procesador.
+  responsable: fsw
+  estado: pendiente
+  cubierto_en: []
+- id: F2
+  categoria: Software Vuelo
+  texto: El CanSat mantendrá el tiempo de misión a lo largo de toda la misión, incluso en caso de reinicios
+    del procesador o pérdida momentánea de energía.
+  responsable: fsw
+  estado: pendiente
+  cubierto_en: []
+- id: F3
+  categoria: Software Vuelo
+  texto: El CanSat debe tener su tiempo configurado mediante un comando terreno con un margen de un segundo
+    con respecto al tiempo UTC antes del lanzamiento.
+  responsable: fsw
+  estado: pendiente
+  cubierto_en: []
+- id: F4
+  categoria: Software Vuelo
+  texto: El vuelo incluirá comandos para requerir información adicional. Estos comandos deberán estar
+    documentados en el manual de la misión.
+  responsable: fsw
+  estado: pendiente
+  cubierto_en: []
+- id: F5
+  categoria: Software Vuelo
+  texto: Los estados de configuración, como la calibración de altitud cero y el estado del software, se
+    mantendrán en caso de un reinicio del procesador durante el lanzamiento y la misión.
+  responsable: fsw
+  estado: pendiente
+  cubierto_en: []
