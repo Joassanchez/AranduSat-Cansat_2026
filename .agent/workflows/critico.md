@@ -30,13 +30,22 @@ Para cada ítem que cubre, leé su fila en `referencia/scoresheet.md` y verific�
 - [ ] Cada cálculo tiene fórmula, valores con unidades y resultado. Rehacé al menos uno.
 - [ ] Las masas nuevas están en `masa.yaml` con fuente e incertidumbre, y `python presupuestos/calc/masa_total.py` corre sin errores.
 
-## 5. Revisar el proceso
+## 5. Revisar el formato de la Guía
+
+- [ ] La parte **Qué pide** de cada subsección no fue modificada.
+- [ ] **Opciones** tiene al menos dos alternativas con datos y fuente.
+- [ ] **Decisión** cabe en una o dos líneas y cita el requisito que cumple.
+- [ ] La decisión está en el registro de `decisiones/guia-12-decisiones-y-cumplimiento.md`.
+- [ ] Las dudas nuevas para la organización están en `consultas-conae.md`.
+- [ ] Si la subsección depende de un supuesto de diseño de `AGENTS.md`, lo dice.
+
+## 6. Revisar el proceso
 
 - [ ] Solo se modificaron archivos de la carpeta del subsistema y `decisiones/` (o hay pedido explícito).
-- [ ] Las decisiones nuevas están en estado `propuesto`.
+- [ ] Las decisiones nuevas quedaron como propuestas.
 - [ ] `ESTADO.md` está actualizado.
 
-## 6. Informe
+## 7. Informe
 
 Escribí el informe con este formato y dáselo a la persona para pegarlo en el PR:
 

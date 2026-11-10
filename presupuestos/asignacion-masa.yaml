@@ -1,0 +1,26 @@
+# Asignación de masa por subsistema (cuánto "le toca" a cada uno de los 500 g de S1).
+# Fuente: Guía de desarrollo, pestaña 1, "Resumen: propuestas iniciales" (propuesta del equipo).
+# Dueño: integrador. Se cambia por PR, con acuerdo de los subsistemas afectados.
+# masa_total.py compara lo cargado en cada masa.yaml contra estos valores.
+
+objetivo_g: 500
+tolerancia_g: 10
+
+asignacion:
+  - grupo: Estructura
+    subsistemas: [mecanica]
+    masa_g: 230
+  - grupo: Descenso
+    subsistemas: [descenso]
+    masa_g: 60
+  - grupo: Electrónica y sensores
+    subsistemas: [sensores, cdh]
+    masa_g: 120
+  - grupo: Potencia
+    subsistemas: [eps]
+    masa_g: 70
+  - grupo: Margen
+    subsistemas: []
+    masa_g: 20
+
+# Nota de la Guía: dos celdas 18650 ya pesan ≈ 94 g, más que los 70 g de potencia.

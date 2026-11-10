@@ -7,6 +7,7 @@ _Última actualización: 2026-11-10_
 ## Hecho
 
 - Sección 2 migrada a Markdown (`seccion-2-mecanica.md`)
+- Pestaña 3 de la Guía migrada (`guia-03-mecanica.md`), todavía con Opciones y Decisión vacías
 - Masa de la estructura impresa cargada en `masa.yaml`
 
 ## En curso
@@ -16,7 +17,7 @@ _Última actualización: 2026-11-10_
 ## Falta
 
 - Exportar las figuras del documento original a `figuras/`
-- Pasar los trades de la Sección 2 a `trades/` y sus propuestas a `decisiones/` en estado `propuesto`
+- Volcar los trades de la Sección 2 en `guia-03-mecanica.md` (Opciones, Decisión, Pendientes) y registrar las propuestas en `decisiones/` en estado `propuesto`
 - Completar tornillería y mecanismo en `masa.yaml`
 
 ## Bloqueado

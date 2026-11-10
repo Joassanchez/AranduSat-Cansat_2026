@@ -7,17 +7,26 @@
 *                                 @usuario-integrador
 
 # Subsistemas
+# (cada carpeta es una pestaña de la Guía; personas según la Guía §1.3)
+# pestañas 1, 2, 10, 11 (gestión: Tabarez y Bojanovich)
 /subsistemas/sistema/             @usuario-integrador
-/subsistemas/mecanica/            @usuario-joaquin
-/subsistemas/sensores/            @usuario-sensores
+# pestaña 3 · P2 · Joaquín Sánchez
+/subsistemas/mecanica/            @Joassanchez
+# pestaña 4 · P1
 /subsistemas/descenso/            @usuario-descenso
-/subsistemas/cdh/                 @usuario-cdh
+# pestaña 5 · P3 · Tabarez
+/subsistemas/sensores/            @usuario-sensores
+# pestaña 6 · P3 con P5
+/subsistemas/cdh/                 @usuario-sensores @usuario-fsw
+# pestaña 7 · P4
 /subsistemas/eps/                 @usuario-eps
+# pestaña 8 · P5
 /subsistemas/fsw/                 @usuario-fsw
+# pestaña 9 · P6
 /subsistemas/gcs/                 @usuario-gcs
 
 # Presupuesto de masa: lo coordina mecánica
-/presupuestos/                    @usuario-joaquin
+/presupuestos/                    @Joassanchez
 
 # Documentos de integración
 /requisitos/                      @usuario-integrador
@@ -28,3 +37,6 @@
 /AGENTS.md                        @usuario-integrador
 /.agent/                          @usuario-integrador
 /.github/                         @usuario-integrador
+
+# Consultas a la CONAE: las coordina el integrador
+/consultas-conae.md               @usuario-integrador

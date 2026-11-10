@@ -1,6 +1,6 @@
 # Estación terrena (GCS)
 
-**Dueño:** _(completar)_ · ver `.github/CODEOWNERS`
+**Persona:** P6 · **Responsable:** _(completar)_ · **Pestaña de la Guía:** 9 · revisores en `.github/CODEOWNERS`
 
 ## Alcance
 
@@ -15,3 +15,7 @@ Computadora, radio, antena y software que reciben, grafican y guardan la telemet
 - `trades/`: una comparativa por archivo (`AAAA-MM-DD-tema.md`)
 - `figuras/`: imágenes para el PDR (PNG/SVG)
 - `ESTADO.md`: qué está hecho, qué falta, qué está bloqueado
+
+## Documentos
+
+- [`guia-09-estacion-terrena.md`](guia-09-estacion-terrena.md): pestaña de la Guía de desarrollo con el formato Qué pide / Qué hay que entender / Opciones / Decisión / Pendientes

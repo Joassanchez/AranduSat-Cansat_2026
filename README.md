@@ -1,32 +1,51 @@
-# CanSat Universitario 2026/27 — Repo del equipo
+# AranduSat — CanSat Universitario 2026/27
 
-Repositorio de trabajo para el certamen CanSat Universitario de la CONAE. Acá vive todo el diseño en texto plano: cada integrante es dueño de su carpeta y trabaja con agentes de IA en Antigravity (Gemini) para investigar, calcular, redactar y revisar.
+Repositorio de trabajo del equipo AranduSat para el certamen CanSat Universitario de la CONAE. Acá vive todo el diseño en texto plano: la **Guía de desarrollo** del equipo, repartida en una carpeta por subsistema, más los requisitos, el scoresheet y las decisiones. Cada integrante es dueño de su carpeta y trabaja con agentes de IA en Antigravity (Gemini) para investigar, calcular, redactar y revisar.
+
+**Entrega del PDR: del 17 al 21 de noviembre de 2026**, en PDF, por el Aula Virtual.
 
 **Tres reglas:** el repo es la única fuente de verdad · los agentes proponen, las personas deciden · nada entra a `main` sin revisión.
 
 ## Estructura
 
+Cada carpeta de `subsistemas/` es una pestaña de la Guía de desarrollo:
+
 ```
-cansat-2026/
+AranduSat-Cansat_2026/
 ├── README.md                 # esta guía
-├── AGENTS.md                 # contexto de la misión para los agentes
+├── AGENTS.md                 # misión, plazo, supuestos y quién es quién, para los agentes
+├── consultas-conae.md        # pestaña 13: dudas y contradicciones a consultar
 ├── .agent/
 │   ├── rules/                # reglas que todo agente respeta
 │   └── workflows/            # /empezar, /trade, /calcular, /critico, /cerrar
 ├── .github/                  # CODEOWNERS y plantillas de issue y PR
-├── referencia/               # Bases, Anexo A y scoresheet en Markdown (+ originales)
-├── requisitos/requisitos.yaml   # los 65 requisitos con estado y responsable
-├── decisiones/               # una decisión de diseño por archivo
+├── referencia/               # Bases, Anexo A, scoresheet, glosario (pestaña 14) + originales
+├── requisitos/requisitos.yaml   # los 65 requisitos con subsistema, persona y estado
+├── decisiones/               # pestaña 12: registro de decisiones y tabla de cumplimiento
 ├── subsistemas/
-│   ├── sistema/              # transversal: CONOPS, layout, I&T, gestión
-│   ├── sensores/  descenso/  mecanica/  cdh/  eps/  fsw/  gcs/
-│   │   ├── README.md  ESTADO.md  masa.yaml
-│   │   ├── trades/  figuras/  (cad/)
-├── presupuestos/calc/        # masa_total.py: suma los masa.yaml
-└── pdr/                      # trazabilidad.md y ensamblado final
+│   ├── sistema/              # pestañas 1, 2, 10 y 11: misión, arquitectura, pruebas, gestión
+│   ├── mecanica/             # pestaña 3 · P2
+│   ├── descenso/             # pestaña 4 · P1
+│   ├── sensores/             # pestaña 5 · P3
+│   ├── cdh/                  # pestaña 6 · P3 con P5 (procesador, memoria, radio, telemetría)
+│   ├── eps/                  # pestaña 7 · P4 (potencia)
+│   ├── fsw/                  # pestaña 8 · P5 (software de vuelo)
+│   └── gcs/                  # pestaña 9 · P6 (estación terrena)
+│       └── guia-NN-*.md  README.md  ESTADO.md  masa.yaml  trades/  figuras/  (cad/)
+├── presupuestos/             # masa: asignación por subsistema y script que suma
+└── pdr/                      # pestaña 0 (inicio), trazabilidad del scoresheet y ensamblado final
 ```
 
-Los subsistemas siguen la división de la plantilla PDR de la CONAE (ver el anexo de `subsistemas/mecanica/seccion-2-mecanica.md`).
+Los nombres de las carpetas son los de la plantilla PDR de la CONAE, los mismos que usa la Guía: C&DH es *Command and Data Handling* (procesamiento y comunicaciones), EPS es *Electrical Power Subsystem*, FSW es *Flight Software* y GCS es *Ground Control Station*.
+
+## La Guía de Drive y el repo
+
+La Guía de desarrollo (Google Docs) se migró al repo el 10/11/2026: cada pestaña quedó como un archivo `guia-NN-*.md` con el mismo formato (Qué pide · Qué hay que entender · Opciones · Decisión · Pendientes). Para no tener dos versiones que se contradigan:
+
+- **Desde la migración se edita en el repo.** En la Guía de Drive conviene poner arriba un aviso "Migrada a GitHub, no editar" y dejarla como lectura.
+- Quien no use Git puede editar los `.md` desde la web de GitHub: el lápiz de "Edit" crea la rama y el PR solo.
+- Si alguien igual escribe en Drive, el dueño de esa pestaña pasa el cambio al repo en su próximo PR.
+- La Sección 2 de mecánica y las investigaciones por persona son el respaldo detallado; la Guía es la versión resumida que va a las diapositivas.
 
 ## Puesta en marcha (una sola vez)
 
@@ -34,11 +53,11 @@ Los subsistemas siguen la división de la plantilla PDR de la CONAE (ver el anex
 
 1. Crea el repo en GitHub (privado), sube esta carpeta y suma a los compañeros con permiso de escritura.
    ```bash
-   cd cansat-2026
+   cd AranduSat-Cansat_2026
    git init -b main
    git add .
    git commit -m "Estructura inicial del repo"
-   git remote add origin https://github.com/<usuario>/cansat-2026.git
+   git remote add origin https://github.com/Joassanchez/AranduSat-Cansat_2026.git
    git push -u origin main
    ```
 2. Reemplaza los `@usuario-...` de `.github/CODEOWNERS` y la tabla de dueños de `AGENTS.md`.
@@ -48,8 +67,8 @@ Los subsistemas siguen la división de la plantilla PDR de la CONAE (ver el anex
 **Cada integrante:**
 
 ```bash
-git clone https://github.com/<usuario>/cansat-2026.git
-cd cansat-2026
+git clone https://github.com/Joassanchez/AranduSat-Cansat_2026.git
+cd AranduSat-Cansat_2026
 pip install -r requirements.txt
 gh auth login        # para que el agente pueda comentar en issues
 ```
@@ -58,7 +77,15 @@ Abre la carpeta en Antigravity. El agente toma las reglas de `.agent/rules/` y l
 
 ## Cómo trabajamos
 
+### Por dónde empezar
+
+El orden de trabajo de la Guía: misión y requisitos (pestaña 1) → arquitectura y masa (2) → mecánica y descenso (3 y 4) → sensores, C&DH y potencia (5 a 7) → software de vuelo y estación terrena (8 y 9) → pruebas, operaciones y gestión (10 y 11).
+
+La decisión que destraba a todos es la **configuración general** (pestaña 2: opción A separable o B cuerpo único), que depende de la respuesta de la CONAE sobre si manda el Anexo A o el scoresheet. Por eso, lo primero es mandar las consultas de `consultas-conae.md` por el Aula Virtual.
+
 ### Una tarea de punta a punta
+
+Una tarea suele ser una subsección de la Guía (por ejemplo "3.2 Estructura de la carga útil").
 
 1. **Issue:** creá un issue con la plantilla "Tarea", asignado a vos, con la etiqueta de tu subsistema y los ítems P.. de `pdr/trazabilidad.md` que cubre.
 2. **Rama y Draft PR:**
@@ -82,7 +109,7 @@ Si mientras trabajás necesitás lo que otros mergearon: `git pull origin main`.
 | Orquestador | Planifica, reparte, comenta en el issue, actualiza `ESTADO.md` | `/empezar`, `/cerrar` |
 | Investigador | Busca alternativas con su datasheet | `/trade` (paso 2) |
 | Ingeniero | Verifica masa, consumo, dimensiones, velocidades | `/trade` (paso 3), `/calcular` |
-| Redactor | Escribe el trade y la decisión | `/trade` (paso 4) |
+| Redactor | Completa Opciones, Decisión y Pendientes en la pestaña de la Guía | `/trade` (paso 4) |
 | Crítico | Revisa contra scoresheet, requisitos y fuentes, sin haber visto el trabajo | `/critico` |
 
 Configuración inicial: un agente principal hace los cuatro primeros roles; el crítico siempre en una conversación aparte. Si la investigación se vuelve el cuello de botella, se separa el investigador y se corren búsquedas en paralelo desde el Agent Manager.
@@ -93,6 +120,7 @@ Configuración inicial: un agente principal hace los cuatro primeros roles; el c
 - **Draft PR** = cómo va: cada commit es avance.
 - **`ESTADO.md`** de cada carpeta = resumen de hecho, falta y bloqueado.
 - **`pdr/trazabilidad.md`** = qué ítems del scoresheet están cubiertos.
+- **"Estado por pestaña"** en `pdr/guia-00-inicio.md` = el tablero general, igual que en la Guía de Drive.
 
 ## Reglas del equipo
 
@@ -100,15 +128,20 @@ Configuración inicial: un agente principal hace los cuatro primeros roles; el c
 - No se modifican carpetas ajenas; si hace falta, se abre un PR que revisa el dueño.
 - Ramas cortas, una por tarea: `<subsistema>/<tarea>`.
 - Commits con prefijo: `mecanica: …`.
-- Decisiones con fecha y tema en el nombre, nunca con número correlativo.
+- La parte "Qué pide" de cada subsección no se toca.
+- Cada decisión cita el requisito que cumple y se anota en el registro de `decisiones/` (pestaña 12).
+- Cada contradicción o duda con la CONAE va a `consultas-conae.md` (pestaña 13).
+- Unidades del SI: masas en gramos, energía en Wh, velocidades en m/s.
+- Los ítems marcados *(sin diapositiva)* los puntúa el scoresheet pero la plantilla no los trae: hay que agregar esas diapositivas.
 - CAD: en el repo solo exportaciones (STEP, STL, PNG); los nativos en Drive con el link en `cad/README.md`. GitHub rechaza archivos de más de 100 MB.
-- Masa: cada subsistema en su `masa.yaml`; el total con `python presupuestos/calc/masa_total.py`.
+- Masa: cada subsistema en su `masa.yaml`; el total y la comparación con la asignación de cada subsistema, con `python presupuestos/calc/masa_total.py`.
 - PRs chicos: idealmente un trade por PR.
 
 ## Dueños (CODEOWNERS)
 
 `.github/CODEOWNERS` no limita quién puede editar: decide quién **revisa**. Cuando un PR toca una carpeta, GitHub agrega a su dueño como revisor. Gana la última regla que coincide. Para reasignar, se edita el archivo y se abre un PR. Si alguien deja el equipo, se reasigna su carpeta enseguida.
 
-## Preguntas abiertas para la organización
+## Preguntas abiertas
 
-Las principales están en `subsistemas/mecanica/seccion-2-mecanica.md` (sección "Preguntas abiertas para la organización") y los conflictos entre documentos, en `AGENTS.md`. Pendiente: **quién es el integrador del PDR**.
+- Para la organización: `consultas-conae.md` (pestaña 13). La Sección 2 de mecánica tiene además sus preguntas específicas.
+- Para el equipo: **quién es el integrador del PDR** y los responsables de descenso, potencia, software de vuelo y estación terrena (ver `AGENTS.md`).

@@ -19,6 +19,6 @@ Para comentar usás el CLI `gh` autenticado (`gh issue comment <número> --body 
 
 ## Estado
 
-Al cerrar cada tarea, actualizá `subsistemas/<tu-subsistema>/ESTADO.md` (hecho, en curso, falta, bloqueado) con la fecha.
+Al cerrar cada tarea, actualizá `subsistemas/<tu-subsistema>/ESTADO.md` (hecho, en curso, falta, bloqueado) con la fecha. Si cambia el estado de la pestaña, proponé también el cambio en la tabla "Estado por pestaña" de `pdr/guia-00-inicio.md`.
 
 Si la tarea cubre ítems del scoresheet, proponé a la persona la actualización de sus filas en `pdr/trazabilidad.md` (estado y ruta). Ese archivo es del integrador: no lo edites sin que te lo pidan.

@@ -48,6 +48,16 @@ def cargar():
     return filas, errores
 
 
+def cargar_asignacion():
+    archivo = RAIZ / "presupuestos" / "asignacion-masa.yaml"
+    if not archivo.exists():
+        return []
+    try:
+        return (yaml.safe_load(archivo.read_text(encoding="utf-8")) or {}).get("asignacion") or []
+    except yaml.YAMLError:
+        return []
+
+
 def resumir(filas):
     definidas = [f for f in filas if isinstance(f["masa"], (int, float))]
     pendientes = [f for f in filas if not isinstance(f["masa"], (int, float))]
@@ -103,6 +113,29 @@ def texto(filas, errores, md=False):
         out.append("ATENCIÓN: con la incertidumbre (RSS), el total ya podría superar el máximo.")
     if sin_inc:
         out.append(f"Sin incertidumbre cargada: {len(sin_inc)} componente(s).")
+
+    asig = cargar_asignacion()
+    if asig:
+        out.append("")
+        out.append(f"{b}Contra la asignación por subsistema{b} (presupuestos/asignacion-masa.yaml):")
+        if md:
+            out += ["", "| Grupo | Asignado (g) | Cargado (g) | Pendientes | Estado |", "| --- | --- | --- | --- | --- |"]
+        for g in asig:
+            subs = g.get("subsistemas") or []
+            if not subs:
+                continue
+            cargado = sum(por_sub.get(s, 0) for s in subs)
+            pend = sum(1 for f in pendientes if f["sub"] in subs)
+            asignado = g.get("masa_g") or 0
+            if cargado > asignado:
+                estado = f"EXCEDIDO por {cargado - asignado:.1f} g"
+            else:
+                estado = f"queda {asignado - cargado:.1f} g"
+            if md:
+                out.append(f"| {g['grupo']} | {asignado:.0f} | {cargado:.1f} | {pend} | {estado} |")
+            else:
+                out.append(f"  {g['grupo']:<24} asignado {asignado:>5.0f} g · cargado {cargado:>6.1f} g · "
+                           f"{pend} pendiente(s) · {estado}")
     if errores:
         out.append("")
         out.append("Errores de formato:")

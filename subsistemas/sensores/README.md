@@ -1,6 +1,6 @@
 # Sensores
 
-**Dueño:** _(completar)_ · ver `.github/CODEOWNERS`
+**Persona:** P3 · **Responsable:** Tabarez (según la Guía) · **Pestaña de la Guía:** 5 · revisores en `.github/CODEOWNERS`
 
 ## Alcance
 
@@ -16,3 +16,7 @@ Presión, temperatura, tensión y corriente de batería, GNSS, aceleración, rot
 - `figuras/`: imágenes para el PDR (PNG/SVG)
 - `masa.yaml`: masa de los componentes de este subsistema
 - `ESTADO.md`: qué está hecho, qué falta, qué está bloqueado
+
+## Documentos
+
+- [`guia-05-sensores.md`](guia-05-sensores.md): pestaña de la Guía de desarrollo con el formato Qué pide / Qué hay que entender / Opciones / Decisión / Pendientes
